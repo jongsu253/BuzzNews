@@ -1,0 +1,22 @@
+name: Java CI with Gradle
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  update-gist:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      - name: run with Gradle
+        run: ./gradlew run --args='${{secrets.GIST_ID}} ${{secrets.GITHUB_TOKEN}}'
