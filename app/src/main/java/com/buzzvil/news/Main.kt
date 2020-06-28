@@ -3,7 +3,6 @@ package com.buzzvil.news
 import com.buzzvil.news.di.DaggerAppComponent
 
 fun main(args: Array<String>) {
-
     val blogBaseUrl = "https://www.buzzvil.com"
     val gistBaseUrl = "https://api.github.com/"
     val gistId = args[0]
@@ -14,4 +13,3 @@ fun main(args: Array<String>) {
 
     app.updateGist()
 }
-
