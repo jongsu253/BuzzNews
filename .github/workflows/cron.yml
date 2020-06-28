@@ -19,4 +19,4 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: run with Gradle
-        run: ./gradlew run --args='${{secrets.GIST_ID}} ${{secrets.GITHUB_TOKEN}}'
+        run: ./gradlew run --args='${{secrets.GIST_ID}} ${{secrets.REPO_TOKEN}}'
